@@ -43,7 +43,7 @@ namespace Web.Services.Weather
                         Temperature = res.Current.Temp_C,
                         CityName = res.Location.Name
                     }),
-                    TimeSpan.FromSeconds(hour));
+                    TimeSpan.FromHours(hour));
                 return res;
             }
 
