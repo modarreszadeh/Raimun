@@ -34,7 +34,10 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<ApiResult<dynamic>> GetWeatherByLocation([Required] string location, [Required] int hour)
         {
-            return await _weatherServices.GetWeatherByLocation(location, 1);
+            var result = await _weatherServices.GetWeatherByLocation(location, 1);
+            if (result == null)
+                return Ok("City Not Found");
+            return result;
         }
 
         [HttpPost]
