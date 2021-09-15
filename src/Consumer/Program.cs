@@ -14,16 +14,7 @@ namespace Consumer
     {
         static void Main(string[] args)
         {
-            string message = WeatherReceiver.Recevie();
-            var weather = JsonConvert.DeserializeObject<WeatherMessage>(message);
-            if (weather.Temperature > 14)
-            {
-                var client = new HttpClient();
-                var response = client.PostAsync("https://localhost:5001/api/weather",
-                    new StringContent(message, Encoding.UTF8, "application/json"));
-                if (response.Result.IsSuccessStatusCode)
-                    Console.WriteLine("Successfully added to Database!");
-            }
+            new WeatherReceiver().Recevie();
         }
     }
 }
