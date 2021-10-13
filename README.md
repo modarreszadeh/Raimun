@@ -29,4 +29,4 @@ cd Raimun/src/Web
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management
 ```
 4. Run `Raimun` using `dotnet run`
-5. Go to [http://localhost:5001](http://localhost:5001) to see your Bestoon version.
+5. Go to [http://localhost:5001](http://localhost:5001) to see your Raimun version.
